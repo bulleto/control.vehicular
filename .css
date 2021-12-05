@@ -1,0 +1,24 @@
+
+.caja{
+    margin: 60px;
+    size: 100% 100%
+  }
+  .eF{
+    margin: 30px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: xx-large;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
+  .form{
+    margin: 0 auto; /* Centramos el formulario */
+    width: 100%;   /* Sin ancho no podemos centrar el formulario */
+    background-color: aqua; /* Color blanco para el formulario */
+    padding: 2px; /* separamos los bordes del form del resto de elementos */
+  }
+  .form input, form textarea{
+    width: 300px;
+    height: 30px;
+    margin: 0.5rem;
+  }
+  

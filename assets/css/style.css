@@ -2128,10 +2128,6 @@ progress {
     -webkit-overflow-scrolling: touch;
   }
 }
-.form-label {
-  margin-bottom: 0.5rem;
-}
-
 .col-form-label {
   padding-top: calc(0.375rem + 1px);
   padding-bottom: calc(0.375rem + 1px);
@@ -2152,6 +2148,9 @@ progress {
   font-size: 0.875rem;
 }
 
+.form-label {
+  margin-bottom: 0.5rem;
+}
 .form-text {
   margin-top: 0.25rem;
   font-size: 0.875em;
@@ -11212,4 +11211,33 @@ textarea.form-control-lg {
   transform: translate(-50%, -50%);
 }
 
-/*# sourceMappingURL=style.css.map */
+.caja{
+  margin: 60px;
+  size: 100% 100%
+}
+.eF{
+  margin: 10px;
+  text-align: center;
+  color:white;
+  font-size: xx-large;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+form{
+ 
+  padding: 60px;
+  max-width: 400px;
+  background-color: transparent;
+  margin: 0 auto;
+}
+form input, textarea {
+  
+  margin-bottom: 15px;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box; 
+  border: none; 
+  color:#9d0df0; 
+  font-size: 1em;
+  resize: none; 
+}
