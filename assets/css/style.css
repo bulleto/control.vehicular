@@ -616,6 +616,30 @@ progress {
   font-size: 13px;
   padding-top: 5rem;
 }
+
+.custom-nav-item{
+  padding: 0.5rem 0.1rem;
+    background: rgba(14,75,242,0.7);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 5px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+    border-radius: 10px;
+    color: white; 
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    border-style: solid;
+    border-color: rgba(112,112,112,1);
+    border-width: 1px;
+    height: 70px;
+    text-align: center;
+}
+.custom-nav-item a{
+  font-size: 20px;
+}
+
 .custom-input-1{
   outline: none;
 border-inline: none;
@@ -656,9 +680,34 @@ border-width: 1px;
 .custom-table-1{
   width:100%;
   border-radius: 10px;
-  overflow: hidden;
-    
+  overflow: hidden;   
      
+}
+
+.custom-select-1{  
+  display: block;
+  margin-right: 5px;
+  /* width: 100%; */
+  padding: 0.175rem 0.725rem 0.375rem 0.75rem;
+  -moz-padding-start: calc(0.75rem - 3px);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color:rgba(165, 34, 197, 0.3);
+   
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: 1px solid #2f3236;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  appearance: none;
+}
+.custom-select-1 option{
+  background-color: rgb(170 51 193);
+  
 }
 
 .custom-table-body-1 tr:nth-child(odd){  
@@ -684,7 +733,7 @@ border-width: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80%;
+  height: 85%;
   font-family: "Poppins", sans-serif;
   }
 .calendar-container::before {
@@ -702,7 +751,7 @@ border-width: 1px;
 .calendar {
   position: relative;
   width: 280px;
-  background-color: #fff;
+  background-color: rgba(14, 75, 242,0.2);
   box-sizing: border-box;
   box-shadow: 0 5px 50px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
@@ -736,7 +785,7 @@ border-width: 1px;
 }
 
 .calendar__date {
-  padding: 9px;
+  padding: 7px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(29px, 1fr));
   grid-gap: 6px;
@@ -750,7 +799,7 @@ border-width: 1px;
   justify-content: center;
   height: 3px;
   font-weight: 600;
-  color: #262626;
+  color: rgb(227 135 190);
 }
 .calendar__day:nth-child(7) {
   color: #ff685d;
@@ -761,15 +810,15 @@ border-width: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 8px;
-  color: #262626;
+  height: 8.5px;
+  color: rgb(255, 255, 255);
 }
 .calendar__number:nth-child(7n) {
-  color: #ff685d;
+  color: #1bb8f3;
   font-weight: 700;
 }
 .calendar__number--current, .calendar__number:hover {
-  background-color: #009688;
+  background-color: #0095ff;
   color: #fff !important;
   font-weight: 700;
   cursor: pointer;
@@ -4384,7 +4433,7 @@ textarea.form-control-lg {
   color: #fff;
 }
 .navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 1);
 }
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
   color: rgba(255, 255, 255, 0.75);
