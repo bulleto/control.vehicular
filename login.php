@@ -1,3 +1,4 @@
+<?php ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,7 +8,8 @@
         
         <link rel="stylesheet" href="assets/css/estiloIS.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <style>body{
+        <style>
+            body{
             background-image: url('images/inicioSesion.png');
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -19,7 +21,7 @@
         <div class="contenedor-formularios">
             <!-- Logo -->
             <div class="container" align="center">
-                <img src="images/logo.png" alt="logo image" width="350" height="250">
+                <img src="images/logo.png" alt="logo image" width="150" height="150">
             </div>
             <!-- Contenido de los Formularios -->
             <div class="contenido-tab">
@@ -38,7 +40,7 @@
                     </form>
                 </div>
             </div> 
-            <p class="Regis">Si aun no tienes cuenta <a href="#"><u>Registrate</u></a></h1>
+            <h1><p class="Regis">Si aun no tienes cuenta <a href="#"><u>Registrate</u></a></h1>
 
 </body>
 </html>
