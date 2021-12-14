@@ -1,3 +1,4 @@
+<?php @session_start();?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -116,9 +117,10 @@
           <div class="custom-card" style="padding: 0.2rem 0.2rem">
             <div class="" style="padding-bottom: 5px">
               <label for="marca">Marca</label>
+
               <input
                 type="text"
-                value="Chevrolet"
+                value="<?php echo $_SESSION['id_emp'];?>"
                 style="width: 30%"
                 class="custom-input-1"
               />

@@ -19,14 +19,12 @@ function enviar(e){
 
 
     //objeto ajax
-    var respuesta = new XMLHttpRequest();
+    var backend = new XMLHttpRequest();
 
-    console.log(respuesta);
-    
-    respuesta.open('POST','partials/login_back.php',true);
-    respuesta.onload = function(){
+    backend.open('POST','partials/login_back.php',true);
+    backend.onload = function(){
         if(this.status===200){
-            var respuesta = JSON.parse(respuesta.responseText);
+            var respuesta = JSON.parse(backend.responseText);
                     console.log(respuesta);
 
                     if (respuesta['response']==='dos') {
@@ -52,6 +50,6 @@ function enviar(e){
 
         }
     }
-    respuesta.send(datos);
+    backend.send(datos);
 
 }
