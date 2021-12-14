@@ -1,6 +1,7 @@
 <?php
 function signout(){
-    unset($_SESSION['']);
+    unset($_SESSION['id_emp']);
+    unset($_SESSION['usuario']);
 
     session_destroy();
     session_regenerate_id(true);

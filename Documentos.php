@@ -17,13 +17,13 @@
 /////////////////////////////////////////////////////////////////////////////////////////////-->
 <nav class="navbar navbar-expand-lg navbar-dark custom-menu shadow fixed-top" style="background: rgba(0, 0, 0, 0); padding-top: 1rem;">
     <div class="container ">      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span ><i class="fas fa-arrow-alt-circle-left"></i>
+      <a class="navbar-toggler" href="index3.php">
+        <span ><i class="fas fa-arrow-alt-circle-left" style="color: white;"></i>
         </span>
-      </button>
+      </a>
       
       <a class="navbar-brand" href="">
-        <img src="images/cerrar_sesion_lg.png" alt="logo image" style="width: 40px; height: 40px;">
+        <img src="images/cerrar_sesion_lg.png" alt="logo image" style="width: 40px; height: 40px; font-size: 20px;">
       </a>
       
       <div class="collapse navbar-collapse justify-content-start" id="navbarNav" style="background:linear-gradient(to top, rgb(132, 91, 163), rgba(209, 34, 227,1));">
@@ -120,7 +120,7 @@
           <label for="fechaE" style="margin-left: 1%; margin-bottom: 1%;">Expe</label>
           <input type="text" value="21-07-19" style="width: 20%; margin-right: 40px; margin-bottom: 1%;" class="custom-input-2"> 
           <label for="termino" style= "margin-right: center; margin-bottom: 1%;">Vigencia</label>
-          <input type="text" value="13-04-22" style="width: 20%; margin-right: cente10%;  margin-bottom: 1%;" class="custom-input-2">
+          <input type="text" value="13-04-22" style="width: 20%; margin-right: 10%;  margin-bottom: 1%;" class="custom-input-2">
         </div>
   </section>
    

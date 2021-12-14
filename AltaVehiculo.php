@@ -17,13 +17,13 @@
 /////////////////////////////////////////////////////////////////////////////////////////////-->
 <nav class="navbar navbar-expand-lg navbar-dark custom-menu shadow fixed-top" style="background: rgba(0, 0, 0, 0); padding-top: 1rem;">
     <div class="container ">      
-      <a class="navbar-toggler" href="Vehiculos.html">
+      <a class="navbar-toggler" href="vehiculos.php">
         <span ><i class="fas fa-arrow-alt-circle-left"></i>
         </span>
       </a>
       
       <a class="navbar-brand" href="">
-        <img src="images/cerrar_sesion_lg.png" alt="logo image" style="width: 40px; height: 40px;">
+        <img src="images/cerrar_sesion_lg.png" alt="logo image" style="width: 40px; height: 40px; font-size: 20px;">
       </a>
       
       <div class="collapse navbar-collapse justify-content-start" id="navbarNav" style="background:linear-gradient(to top, rgb(132, 91, 163), rgba(209, 34, 227,1));">
@@ -105,8 +105,11 @@
     </div>
 
 <!--Botones finales-->
-     <button style="position: absolute; top: 500px; right: 26%;" class="custom-card-2">Confirmar Alta de Vehiculo</button>
-     <button style="position: absolute; top: 550px; right: 41%;" class="custom-card-2">Cancelar</button>
+     <button style="position: absolute; top: 500px; right: 26%;" type="submit" class="custom-card-2">Confirmar Alta de Vehiculo</button>
+     <a href="vehiculos.php">
+     <button style="position: absolute; top: 550px; right: 41%;" type="button" class="custom-card-2">Cancelar</button>
+     </a>
+     
     </form>
     </div>
 

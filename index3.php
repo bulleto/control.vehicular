@@ -50,7 +50,7 @@
           <option value="mercedes">Mercedes</option>
           <option value="audi">Audi</option>
         </select>
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="logout.php">
           <img
             src="images/cerrar_sesion_lg.png"
             alt="logo image"
@@ -64,13 +64,13 @@
         >
           <ul class="navbar-nav" style="margin-top: 10px">
             <li class="nav-item custom-nav-item">
-              <a class="nav-link" href="index3.html">Tarjeta de circulación</a>
+              <a class="nav-link" href="Documentos.php">Documentos</a>
             </li>
             <li class="nav-item custom-nav-item">
-              <a class="nav-link" href="#services">Licencia de conducir</a>
+              <a class="nav-link" href="Datos.php">Perfil</a>
             </li>
             <li class="nav-item custom-nav-item">
-              <a class="nav-link" href="#testimonials">Vehículo/s</a>
+              <a class="nav-link" href="vehiculos.php">Vehículo/s</a>
             </li>
           </ul>
         </div>

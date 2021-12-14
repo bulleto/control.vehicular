@@ -17,13 +17,13 @@
 /////////////////////////////////////////////////////////////////////////////////////////////-->
 <nav class="navbar navbar-expand-lg navbar-dark custom-menu shadow fixed-top" style="background: rgba(0, 0, 0, 0); padding-top: 1rem;">
     <div class="container ">      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-toggler" href="index3.php">
         <span ><i class="fas fa-arrow-alt-circle-left"></i>
         </span>
-      </button>
+      </a>
       
       <a class="navbar-brand" href="">
-        <img src="images/cerrar_sesion_lg.png" alt="logo image" style="width: 40px; height: 40px;">
+        <img src="images/cerrar_sesion_lg.png" alt="logo image" style="width: 40px; height: 40px; font-size: 20px;">
       </a>
       
       <div class="collapse navbar-collapse justify-content-start" id="navbarNav" style="background:linear-gradient(to top, rgb(132, 91, 163), rgba(209, 34, 227,1));">

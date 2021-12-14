@@ -31,7 +31,7 @@ function enviar(e){
                           Swal.fire({                            
                             icon: 'success',
                             title: '¡Inicio correcto! ',
-                            text:'Bienvenido' + respuesta['usuario'],
+                            text:'Bienvenido: ' + respuesta['usuario'] + '!',
                             showConfirmButton: false,
                             timer: 3000
                           });                        
