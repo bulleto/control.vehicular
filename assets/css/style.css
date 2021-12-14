@@ -66,7 +66,14 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   
 }
-html, body {margin: 0; height: 100%; overflow: hidden}
+html, body {
+  max-height: 700px;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    max-width: 800px !important;
+    background-color: black;
+}
 
 hr {
   margin: 1rem 0;
