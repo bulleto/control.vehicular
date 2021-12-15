@@ -61,47 +61,47 @@
   
     <!-- START THE CAROUSEL CONTENT  -->
     <div class="row container" style="margin-left: 0.05rem;">
-      <form action=""class="custom-card-2">
+      <form id="register" class="custom-card-2">
         <div class="" style="padding-bottom: 5px;">
         <label for="marca" >Marca</label>
-        <input type="text" value="FORD" style="width: 20%;" class="custom-input-2"> 
+        <input type="text" placeholder="FORD" id="marca" style="width: 20%;" class="custom-input-2"> 
         <label for="modelo" >Combustible</label>
-        <input type="text" value="Gasolina" style="width: 24%;" class="custom-input-2">
+        <input type="text" placeholder="Gasolina" id="combustible" style="width: 24%;" class="custom-input-2">
       </div>
       <!--Formulario segundo div-->
       <div class="" style="padding-bottom: 5px;">
         <label for="marca" style="margin-right: 1%;">Modelo</label>
-        <input type="text" value="2001" style="width: 15%; margin-right: 25%;" class="custom-input-2"> 
+        <input type="text" placeholder="2001" id="modelo" style="width: 15%; margin-right: 25%;" class="custom-input-2"> 
         <label for="modelo" >Tipo</label>
-        <input type="text" value="Particular" style="width: 24%;" class="custom-input-2">
+        <input type="text" placeholder="Particular" id="tipo" style="width: 24%;" class="custom-input-2">
       </div>
       <div class="">
        <label for="placas" >Placas</label>
-       <input type="text" value="QST-22-31" style="width: 29%;" class="custom-input-2">
+       <input type="text" placeholder="QST-22-31" id="placas" style="width: 29%;" class="custom-input-2">
        <label for="engomado" >Cilindrada</label>
-       <input type="text" value="4 cilindros" style="width: 23%;" class="custom-input-2">
+       <input type="text" placeholder="4 cilindros" id="cilindros" style="width: 23%;" class="custom-input-2">
      </div>
   <!--Formulario NIV-->
     <div class="">
       <label for="engomado"  style="margin-right: 0.7%;">NIV</label>
-      <input type="text" value="121352231" style="width: 70%;" class="custom-input-2">
+      <input type="text" placeholder="121352231" id="niv" style="width: 70%;" class="custom-input-2">
     </div>
   <!--Formulario No. de motor-->
     <div class="">
       <label for="motor"  style="margin-right: 0%;">No. Motor</label>
-      <input type="text" value="1213sdgs522df31" style="width: 70%; margin-right: 10%;" class="custom-input-2">
+      <input type="text" placeholder="1213sdgs522df31" id="motor" style="width: 70%; margin-right: 10%;" class="custom-input-2">
     </div>
   <!--Formulario No. de poliza-->
     <div class="">
       <label for="poliza"  style="margin-right: 0%;">No. Poliza</label>
-      <input type="text" value="1272183321" style="width: 70%; margin-right: 10%;" class="custom-input-2">
+      <input type="text" placeholder="1272183321" id="poliza" style="width: 70%; margin-right: 10%;" class="custom-input-2">
     </div>
   <!--Formulario tercer div-->
     <div class="" style="padding-bottom: 5px;">
       <label for="propietario" style="margin-right: 2%;">No.Propietario</label>
-      <input type="text" value="Primer" style="width: 20%; margin-right: center;" class="custom-input-2"> 
+      <input type="text" placeholder="Primer" id="propietario" style="width: 20%; margin-right: center;" class="custom-input-2"> 
       <label for="seguro" style="margin-right: 0%;">¿Asegurado?</label>
-      <input type="text" value="SI" style="width: 24%; margin-right: center;" class="custom-input-2">
+      <input type="text" placeholder="SI" id="seguro" style="width: 24%; margin-right: center;" class="custom-input-2">
     </div>
 
 <!--Botones finales-->
