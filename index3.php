@@ -1,4 +1,10 @@
-<?php @session_start();?>
+<?php
+include_once 'partials/sesion.php';
+include_once 'partials/utilities.php';
+if(!(isset($_SESSION['usuario']))){
+    redirectTo('login');;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -120,7 +126,7 @@
 
               <input
                 type="text"
-                value="<?php echo $_SESSION['id_emp'];?>"
+                value="<?php echo $_SESSION['id_usuario'];?>"
                 style="width: 30%"
                 class="custom-input-1"
               />

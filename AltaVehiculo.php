@@ -130,5 +130,14 @@
 
 
      <script src="assets/js/bootstrap.bundle.min.js"></script>
+     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+     <script src="js/jquery.min.js"></script> 
+      <script src="js/jquery-3.0.0.min.js"></script>
+     <script src="assets/js/bootstrap.bundle.min.js"></script>
+     <script>  
+     
+     </script>
+     <script src="js/alta.js"></script>
 </body>
 </html>

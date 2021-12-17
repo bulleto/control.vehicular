@@ -11,7 +11,8 @@ $motor = $_POST['motor'];
 $poliza = $_POST['poliza'];
 $propietario = $_POST['propietario'];
 $seguro = $_POST['seguro'];
-$id_usuario= $_SESSION['usuario'];
+@session_start();
+$id_usuario= $_SESSION['id_usuario'];
 
 
 
@@ -21,28 +22,32 @@ include 'conexion.php';
 
 try {
     //se realiza la consulta
-    $stmt = $conn->prepare("SELECT marca,placa FROM vehiculos WHERE placa = '$placas'");
+    $stmt = $conn->prepare("SELECT marca FROM vehiculos WHERE placa = '$placas'");
     $stmt->execute();
     
 
     //loguear el usuario
 
-    $stmt->bind_result($db_marca,$db_placa);
+    $stmt->bind_result($db_marca);
     $stmt->fetch();
-    if ($db_placa) {
+    if ($db_marca) {
         $arreglo = array(
             'response'=>'dos',
-            'placa'=>$db_placa,
-            'marca'=>$db_marca
+            'marca'=>$db_marca,
+            'placas'=>$placas
         );
     }else{
-        $inserta = $conn->prepare("INSERT INTO vehiculos (marca,modelo,combustible,tipo,cilindro,niv,motor,placa,seguro,propietario,poliza,id_usuario) VALUES ('$marca','$combustible','$modelo','$tipo','$placas','$cilindros','$niv','$motor','$poliza','$propietario','$seguro','$id_usuario')");
+        $inserta = $conn->prepare("INSERT INTO vehiculos (marca,modelo,combustible,tipo,cilindro,niv,motor,placa,seguro,propietario,poliza,id_usuario) VALUES ('$marca','$modelo','$combustible','$tipo','$cilindros','$niv','$motor','$placas','$seguro','$propietario','$poliza','$id_usuario');");
         $inserta->execute();
+        
+
+        
 
         if($inserta->affected_rows){
             $arreglo = array(
                 'response' => 'sinresultados',
-                'id_insertado' => $inserta->insert_id     
+                'id_insertado' => $inserta->insert_id,
+                'user_id' => $id_usuario
             );
 
         }

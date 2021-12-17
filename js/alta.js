@@ -27,7 +27,7 @@ function enviar(e){
             'error'
         )
     }else{
-        console.log(usuario);
+        console.log(marca);
 
         let entrar = true;
         if(entrar == true){
@@ -57,7 +57,7 @@ function enviar(e){
 
                     if (respuesta['response']==='dos') {
                         Swal.fire(
-                            'Vehiculo: '+ respuesta['marca']+' ' +respuesta['placas']+ ', ya Existe!',
+                            'Vehiculo: '+ respuesta['marca']+', placas ' +respuesta['placas']+ ', ya Existe!',
                             'Intenta con otro',
                             'error'
                         );

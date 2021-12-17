@@ -17,7 +17,7 @@ try {
     if ($db_usuario) {
         @session_start();
 
-        $_SESSION['id_emp']=$db_id;
+        $_SESSION['id_usuario']=$db_id;
         $_SESSION['usuario']=$db_usuario;
 
         $arreglo = array(
