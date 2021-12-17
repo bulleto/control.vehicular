@@ -1,3 +1,10 @@
+<?php
+include_once 'partials/sesion.php';
+include_once 'partials/utilities.php';
+if(!(isset($_SESSION['usuario']))){
+    redirectTo('login');;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +77,8 @@
         <div class="custom-card-2" style="width: 90%; margin-left: 1rem; padding-top: 10px;">
           <div class="" style=" text-align: left; margin-left: 10px;">
             <label for="user-title" >Usuario: </label>
-             Usuario 
+              <?php echo $_SESSION['usuario']?>
+
           </div> 
           
       
@@ -81,38 +89,9 @@
           </label>
         </h5>
         </div> 
-        <div style="overflow-y: auto; height: 90px; margin-top:10px; margin-bottom:10px">
-              <table class="custom-table-1">
-                <thead class="custom-th-1">
-                  <tr>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Placas</th>
-                  </tr>
-                </thead>
-                <tbody class="custom-table-body-1">
-                  <tr>
-                    <td>1</td>
-                    <td>Valor 1</td>
-                    <td>Valor 2</td>                    
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Valor 1</td>
-                    <td>Valor 2</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Valor 1</td>
-                    <td>Valor 2</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Valor 1</td>
-                    <td>Valor 2</td>
-                  </tr>
-                </tbody>
-              </table>
+        <div style="overflow-y: auto; height: 90px; margin-top:10px; margin-bottom:10px" id="tabla">
+
+
             </div>
         
       
@@ -157,7 +136,11 @@
      <script>  
      
      </script>
-     <script src="js/registro.js"></script>
+     <script type="text/javascript">
+    $(document).ready(function(){
+        $("#tabla").load("components/tablaVehiculo.php");
+    });
+    </script>
      
 </body>
 </html>
