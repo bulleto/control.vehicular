@@ -1,8 +1,19 @@
 <?php
 include_once 'partials/sesion.php';
 include_once 'partials/utilities.php';
+$redirect = false;
 if(!(isset($_SESSION['usuario']))){
-    redirectTo('login');;
+  $redirect = true;
+  $opcion = 'login';
+    
+}
+if(!(isset($_SESSION['id_vehiculo']))){
+  $redirect = true;
+  $opcion = 'AltaVehiculo';
+    
+}
+if($redirect==true){
+  redirectTo($opcion);
 }
 ?>
 <!DOCTYPE html>
@@ -126,7 +137,7 @@ if(!(isset($_SESSION['usuario']))){
 
               <input
                 type="text"
-                value="<?php echo $_SESSION['id_usuario'];?>"
+                value="<?php echo $_SESSION['id_vehiculo'];?>"
                 style="width: 30%"
                 class="custom-input-1"
               />
@@ -156,74 +167,21 @@ if(!(isset($_SESSION['usuario']))){
             </div>
           </div>
         </div>
+        
         <!-- START CARD CALENDARIO CONTENT  -->
         <div class="row container" style="margin-left: 0.05rem">
-          <div class="custom-card" style="text-align: center; height: 120px">
-            <strong>
-              <label for="" style="font-size: 13px"
-                >Calendario de verificacion</label
-              >
-            </strong>
-
-            <div class="calendar-container">
-              <div class="calendar">
-                <div class="calendar__date">
-                  <div class="calendar__day">L</div>
-                  <div class="calendar__day">M</div>
-                  <div class="calendar__day">X</div>
-                  <div class="calendar__day">J</div>
-                  <div class="calendar__day">V</div>
-                  <div class="calendar__day">S</div>
-                  <div class="calendar__day">D</div>
-                  <div class="calendar__number"></div>
-                  <div class="calendar__number"></div>
-                  <div class="calendar__number"></div>
-                  <div class="calendar__number">1</div>
-                  <div class="calendar__number">2</div>
-                  <div class="calendar__number">3</div>
-                  <div class="calendar__number">4</div>
-                  <div class="calendar__number">5</div>
-                  <div class="calendar__number">6</div>
-                  <div class="calendar__number">7</div>
-                  <div class="calendar__number">8</div>
-                  <div class="calendar__number">9</div>
-                  <div class="calendar__number">10</div>
-                  <div class="calendar__number">11</div>
-                  <div class="calendar__number">12</div>
-                  <div class="calendar__number">13</div>
-                  <div class="calendar__number">14</div>
-                  <div class="calendar__number">15</div>
-                  <div class="calendar__number">16</div>
-                  <div class="calendar__number">17</div>
-                  <div class="calendar__number calendar__number--current">
-                    18
-                  </div>
-                  <div class="calendar__number">19</div>
-                  <div class="calendar__number">20</div>
-                  <div class="calendar__number">21</div>
-                  <div class="calendar__number">22</div>
-                  <div class="calendar__number">23</div>
-                  <div class="calendar__number">24</div>
-                  <div class="calendar__number">25</div>
-                  <div class="calendar__number">26</div>
-                  <div class="calendar__number">27</div>
-                  <div class="calendar__number">28</div>
-                  <div class="calendar__number">29</div>
-                  <div class="calendar__number">30</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- START CARD CALENDARIO CONTENT  -->
-        <div class="row container" style="margin-left: 0.05rem">
-          <div class="custom-card" style="text-align: center; height: 120px">
+          <div class="custom-card" style="text-align: center; height: 160px">
             <strong>
               <label for="" style="font-size: 13px"
                 >Calendario de pago de verificacion</label
               >
             </strong>
+            <div><label for="" style="font-size: 13px"
+                >Noviembre</label
+              ></div>
+            
             <div class="calendar-container">
+              
               <div class="calendar">
                 <div class="calendar__date">
                   <div class="calendar__day">L</div>
@@ -245,15 +203,15 @@ if(!(isset($_SESSION['usuario']))){
                   <div class="calendar__number">7</div>
                   <div class="calendar__number">8</div>
                   <div class="calendar__number">9</div>
-                  <div class="calendar__number">10</div>
-                  <div class="calendar__number">11</div>
-                  <div class="calendar__number">12</div>
-                  <div class="calendar__number">13</div>
+                  <div class="calendar__number calendar__number--current">10</div>
+                  <div class="calendar__number calendar__number--current">11</div>
+                  <div class="calendar__number calendar__number--current">12</div>
+                  <div class="calendar__number calendar__number--current">13</div>
                   <div class="calendar__number calendar__number--current">
                     14
                   </div>
-                  <div class="calendar__number">15</div>
-                  <div class="calendar__number">16</div>
+                  <div class="calendar__number calendar__number--current">15</div>
+                  <div class="calendar__number calendar__number--current">16</div>
                   <div class="calendar__number">17</div>
                   <div class="calendar__number">18</div>
                   <div class="calendar__number">19</div>

@@ -7,27 +7,29 @@ $password = $_POST['password'];
 include 'conexion.php';
 try {
     //se realiza la consulta
-    $stmt = $conn->prepare("SELECT id_usuario,usuario,telefono,email FROM usuarios WHERE usuario = '$usuario';");
+    $stmt = $conn->prepare("SELECT id_usuario FROM usuarios WHERE usuario = '$usuario' AND pass='".md5($_POST['password'])."'");
     $stmt->execute();
 
     //loguear el usuario
 
-    $stmt->bind_result($db_id,$db_usuario,$db_telefono,$db_email);
+    $stmt->bind_result($db_id);
     $stmt->fetch();
-    if ($db_usuario) {
+    if ($db_id) {
         @session_start();
 
         $_SESSION['id_usuario']=$db_id;
-        $_SESSION['usuario']=$db_usuario;
+        $_SESSION['usuario']=$usuario;
 
         $arreglo = array(
             'response'=>'dos',
-            'usuario'=>$db_usuario,
+            'usuario'=>$usuario,
             'id_usuario'=>$db_id,
             'sesion'=>$_SESSION['usuario']
         );
 
         //creamos avariables de session
+
+        
 
 
 
@@ -36,7 +38,7 @@ try {
         $arreglo = array(
             'response'=>'valor',
             'usuario'=>$usuario,
-            'nombre'=>$password
+            'nombre'=>$_POST['password']
         );
         
     }    

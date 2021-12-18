@@ -67,7 +67,7 @@
     </div>
   <!--Formulario No. de motor-->
     <div class="">
-      <label for="motor"  style="margin-right: 0%;">No. Motor</label>
+      <label for="motor"  style="margin-right: 0%;">Placas</label>
       <input type="text" value="1213sdgs522df31" style="width: 70%; margin-top: 10px;" class="custom-input-2">
     </div>
    
@@ -75,40 +75,9 @@
   </div>
   
     <!-- START THE CAROUSEL CONTENT  -->
-    <div class="row container" style="margin-left: 0.05rem;">
-      <form action=""class="custom-card-2">
-        <div class="" style="padding-bottom: 5px;">
-        <label for="marca" >Marca</label>
-        <input type="text" value="FORD" style="width: 20%;" class="custom-input-2"> 
-        <label for="modelo" >Combustible</label>
-        <input type="text" value="Gasolina" style="width: 24%;" class="custom-input-2">
-      </div>
-      <!--Formulario segundo div-->
-      <div class="" style="padding-bottom: 5px;">
-        <label for="marca" style="margin-right: 1%;">Modelo</label>
-        <input type="text" value="2001" style="width: 15%; margin-right: 25%;" class="custom-input-2"> 
-        <label for="modelo" >Tipo</label>
-        <input type="text" value="Particular" style="width: 24%;" class="custom-input-2">
-      </div>
-      <div class="">
-       <label for="placas" >Placas</label>
-       <input type="text" value="QST-22-31" style="width: 29%;" class="custom-input-2">
-       <label for="engomado" >Cilindrada</label>
-       <input type="text" value="4 cilindros" style="width: 23%;" class="custom-input-2">
-     </div>
+    
 
-  <!--Formulario No. de poliza-->
-    <div class="">
-      <label for="poliza"  style="margin-right: 0%;">No. Poliza</label>
-      <input type="text" value="1272183321" style="width: 70%; margin-right: 10%;" class="custom-input-2">
-    </div>
-  <!--Formulario tercer div-->
-    <div class="" style="padding-bottom: 5px;">
-      <label for="propietario" style="margin-right: 2%;">No.Propietario</label>
-      <input type="text" value="Primer" style="width: 20%; margin-right: center;" class="custom-input-2"> 
-      <label for="seguro" style="margin-right: 0%;">¿Asegurado?</label>
-      <input type="text" value="SI" style="width: 24%; margin-right: center;" class="custom-input-2">
-    </div>
+ 
 
 <!--Botones finales-->
      <button style="position: absolute; top: 500px; right: 26%;" type="submit" class="custom-card-2">Confirmar Baja de Vehiculo</button>

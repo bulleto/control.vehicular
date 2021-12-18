@@ -10,7 +10,7 @@ function enviar(e){
     var usuario = document.querySelector("#usuario").value,
     password = document.querySelector("#password").value;
 
-    //console.log(usuario + password);
+    console.log(usuario + password);
 
 
     var datos =  new FormData();

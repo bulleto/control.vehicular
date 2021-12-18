@@ -44,6 +44,7 @@ try {
         
 
         if($inserta->affected_rows){
+            $_SESSION['id_vehiculo']= $inserta->insert_id;
             $arreglo = array(
                 'response' => 'sinresultados',
                 'id_insertado' => $inserta->insert_id,

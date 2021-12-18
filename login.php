@@ -23,7 +23,7 @@
     <!-- Formularios -->
     <div class="contenedor-formularios">
         <!-- Logo -->
-        <div class="container" align="center">
+        <div class="container"  align="center">
             <img src="images/logo.png" alt="logo image" width="150" height="150">
         </div>
         <!-- Contenido de los Formularios -->
@@ -33,7 +33,7 @@
                 <h1>¡Te damos la bienvenida!</h1>
                 <form id="login">
                     <div class="contenedor-input">
-                        <input type="text" placeholder="Correo" id="usuario" required>
+                        <input type="text" placeholder="Usuario" id="usuario" required>
                     </div>
                     <div class="contenedor-input">
                         <input type="password" placeholder="Contraseña" id="password" required>
