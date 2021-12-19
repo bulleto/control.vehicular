@@ -35,7 +35,7 @@ if($redirect==true){
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body >
     <!-- ////////////////////////////////////////////////////////////////////////////////////////
                                START SECTION 1 - THE NAVBAR SECTION  
 /////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -341,6 +341,7 @@ if($redirect==true){
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-3.0.0.min.js"></script>
+
     <script src="js/index.js"></script>
   </body>
 </html>

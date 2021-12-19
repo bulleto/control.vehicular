@@ -19,7 +19,7 @@
     </style>
 </head>
 
-<body>
+<body onload="bienvenida();">
     <!-- Formularios -->
     <div class="contenedor-formularios">
         <!-- Logo -->
@@ -54,6 +54,19 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-3.0.0.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function bienvenida() {
+            Swal.fire({
+                title: 'Bienvenido!',
+                text: 'Hecho por Daniel,Maigualida y Miguel.',
+                imageUrl: 'https://sicoes.tesi.org.mx/preregistro/img/logotipo/logo.png',
+                imageWidth: 250,
+
+                imageAlt: 'Custom image',
+            })
+
+        }
+    </script>
     <script src="js/login.js"></script>
 
 </body>
