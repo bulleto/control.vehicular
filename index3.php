@@ -7,9 +7,9 @@ if(!(isset($_SESSION['usuario']))){
   $opcion = 'login';
     
 }
-if(!(isset($_SESSION['id_vehiculo']))){
+if(!(isset($_SESSION['id_vehiculo'])) && isset($_SESSION['usuario'])){
   $redirect = true;
-  $opcion = 'AltaVehiculo';
+  $opcion = 'vehiculos';
     
 }
 if($redirect==true){
@@ -56,16 +56,30 @@ if($redirect==true){
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <select
-          name="cars"
-          id="cars"
-          class="custom-select-1"
-          style="width: 50%"
-        >
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+          <select
+                  name="cars"
+                  id="cars"
+                  class="custom-select-1"
+                  style="width: 50%"
+          >
+              <option selected="selected">Elegir vehiculo...</option>
+
+          <?php
+          include ('partials/conexion.php');
+          @session_start();
+          $id_usuario= $_SESSION['id_usuario'];
+          $sql="SELECT marca,placa FROM vehiculos WHERE id_usuario = '$id_usuario'";
+          $result=mysqli_query($conn, $sql);
+          while($ver=mysqli_fetch_row($result)){
+              $datos=$ver[0]."||".$ver[1];
+
+
+              ?>
+              <option value="<?php   echo $ver[1]?>"><?php   echo $ver[0]?></option>
+              <?php
+          }
+          ?>
+
         </select>
         <a class="navbar-brand" href="logout.php">
           <img
@@ -109,60 +123,76 @@ if($redirect==true){
       <!-- START CUSTOM CONTAINER  -->
       <div class="container custom-container">
         <!-- START THE CAROUSEL CONTENT  -->
-        <div
-          class="row align-items-center container"
-          style="margin-left: 0.05rem"
-        >
-          <div class="custom-card">
-            <strong
-              ><label for="descripcion" style="margin-left: 5px"
-                >Descripcion</label
-              >
-            </strong>
-            <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="2"
-              class="custom-input-1"
-              style="margin-bottom: 0px"
-            ></textarea>
-          </div>
-        </div>
+
         <!-- START CARD CONTENT  -->
         <div class="row container" style="margin-left: 0.05rem">
           <div class="custom-card" style="padding: 0.2rem 0.2rem">
             <div class="" style="padding-bottom: 5px">
               <label for="marca">Marca</label>
-
               <input
                 type="text"
-                value="<?php echo $_SESSION['id_vehiculo'];?>"
+                value="<?php
+                if(isset($_SESSION['marca'])){
+                    echo $_SESSION['marca'];
+                }else{
+                    echo "";
+
+                }
+                ?>"
                 style="width: 30%"
                 class="custom-input-1"
+                id="marca"
+                readonly
               />
               <label for="modelo">Modelo</label>
               <input
                 type="text"
-                value="2001"
+                value="<?php
+                if(isset($_SESSION['modelo'])){
+                    echo $_SESSION['modelo'];
+                }else{
+                    echo "";
+
+                }
+                ?>"
                 style="width: 24%; max-width: 34%"
                 class="custom-input-1"
+                id="modelo"
+                readonly
               />
             </div>
             <div class="">
               <label for="placas">Placas</label>
               <input
                 type="text"
-                value="LGA-00-00"
+                value="<?php
+                if(isset($_SESSION['placa'])){
+                    echo $_SESSION['placa'];
+                }else{
+                    echo "";
+
+                }
+                ?>"
                 style="width: 29%"
                 class="custom-input-1"
+                id="placas"
+                readonly
               />
               <label for="engomado">Engomado</label>
               <input
                 type="text"
-                value="Amarillo"
+                value="<?php
+                if(isset($_SESSION['engomado'])){
+                    echo $_SESSION['engomado'];
+                }else{
+                    echo "";
+
+                }
+                ?>"
                 style="width: 23%"
                 class="custom-input-1"
+                id="engomado"
+                readonly
               />
             </div>
           </div>
@@ -170,65 +200,86 @@ if($redirect==true){
         
         <!-- START CARD CALENDARIO CONTENT  -->
         <div class="row container" style="margin-left: 0.05rem">
-          <div class="custom-card" style="text-align: center; height: 160px">
-            <strong>
-              <label for="" style="font-size: 13px"
-                >Calendario de pago de verificacion</label
-              >
-            </strong>
-            <div><label for="" style="font-size: 13px"
-                >Noviembre</label
-              ></div>
-            
-            <div class="calendar-container">
-              
-              <div class="calendar">
-                <div class="calendar__date">
-                  <div class="calendar__day">L</div>
-                  <div class="calendar__day">M</div>
-                  <div class="calendar__day">X</div>
-                  <div class="calendar__day">J</div>
-                  <div class="calendar__day">V</div>
-                  <div class="calendar__day">S</div>
-                  <div class="calendar__day">D</div>
-                  <div class="calendar__number"></div>
-                  <div class="calendar__number"></div>
-                  <div class="calendar__number"></div>
-                  <div class="calendar__number">1</div>
-                  <div class="calendar__number">2</div>
-                  <div class="calendar__number">3</div>
-                  <div class="calendar__number">4</div>
-                  <div class="calendar__number">5</div>
-                  <div class="calendar__number">6</div>
-                  <div class="calendar__number">7</div>
-                  <div class="calendar__number">8</div>
-                  <div class="calendar__number">9</div>
-                  <div class="calendar__number calendar__number--current">10</div>
-                  <div class="calendar__number calendar__number--current">11</div>
-                  <div class="calendar__number calendar__number--current">12</div>
-                  <div class="calendar__number calendar__number--current">13</div>
-                  <div class="calendar__number calendar__number--current">
-                    14
+          <div class="custom-card" style="text-align: center; height: 160px"  id="calendarioC">
+
+              <?php
+              if(isset($_SESSION['engomado'])){
+                  if ($_SESSION['engomado']=="verde"){
+                      include_once 'components/cal_verde.php';
+
+                  }else if ($_SESSION['engomado']=="azul"){
+                      include_once 'components/cal_azul.php';
+
+                  }else if ($_SESSION['engomado']=="amarillo"){
+                      include_once 'components/cal_amarillo.php';
+
+                  }else if ($_SESSION['engomado']=="rojo"){
+                      include_once 'components/cal_rojo.php';
+
+                  }else{
+                      include_once 'components/cal_rosa.php';
+                  }
+
+              }else{ ?>
+                  <strong>
+                      <label for="" style="font-size: 13px"
+                      >Calendario</label
+                      >
+                  </strong>
+                  <div><label for="" style="font-size: 13px"
+                      >Diciembre</label
+                      ></div>
+
+                  <div class="calendar-container">
+
+
+                      <div class="calendar">
+                          <div class="calendar__date">
+                              <div class="calendar__day">L</div>
+                              <div class="calendar__day">M</div>
+                              <div class="calendar__day">X</div>
+                              <div class="calendar__day">J</div>
+                              <div class="calendar__day">V</div>
+                              <div class="calendar__day">S</div>
+                              <div class="calendar__day">D</div>
+                              <div class="calendar__number"></div>
+                              <div class="calendar__number"></div>
+                              <div class="calendar__number">1</div>
+                              <div class="calendar__number">2</div>
+                              <div class="calendar__number">3</div>
+                              <div class="calendar__number">4</div>
+                              <div class="calendar__number">5</div>
+                              <div class="calendar__number">6</div>
+                              <div class="calendar__number">7</div>
+                              <div class="calendar__number">8</div>
+                              <div class="calendar__number">9</div>
+                              <div class="calendar__number">10</div>
+                              <div class="calendar__number">11</div>
+                              <div class="calendar__number">12</div>
+                              <div class="calendar__number">13</div>
+                              <div class="calendar__number">14</div>
+                              <div class="calendar__number">15</div>
+                              <div class="calendar__number">16</div>
+                              <div class="calendar__number">17</div>
+                              <div class="calendar__number">18</div>
+                              <div class="calendar__number">19</div>
+                              <div class="calendar__number">20</div>
+                              <div class="calendar__number">21</div>
+                              <div class="calendar__number">22</div>
+                              <div class="calendar__number">23</div>
+                              <div class="calendar__number">24</div>
+                              <div class="calendar__number">25</div>
+                              <div class="calendar__number">26</div>
+                              <div class="calendar__number">27</div>
+                              <div class="calendar__number">28</div>
+                              <div class="calendar__number">29</div>
+                              <div class="calendar__number">30</div>
+                              <div class="calendar__number">31</div>
+                          </div>
+                      </div>
                   </div>
-                  <div class="calendar__number calendar__number--current">15</div>
-                  <div class="calendar__number calendar__number--current">16</div>
-                  <div class="calendar__number">17</div>
-                  <div class="calendar__number">18</div>
-                  <div class="calendar__number">19</div>
-                  <div class="calendar__number">20</div>
-                  <div class="calendar__number">21</div>
-                  <div class="calendar__number">22</div>
-                  <div class="calendar__number">23</div>
-                  <div class="calendar__number">24</div>
-                  <div class="calendar__number">25</div>
-                  <div class="calendar__number">26</div>
-                  <div class="calendar__number">27</div>
-                  <div class="calendar__number">28</div>
-                  <div class="calendar__number">29</div>
-                  <div class="calendar__number">30</div>
-                </div>
-              </div>
-            </div>
+              <?php } ?>
+
           </div>
         </div>
         <!-- START CARD MULTAS CONTENT  -->
@@ -286,5 +337,10 @@ if($redirect==true){
     <script src="assets/vendors/js/glightbox.min.js"></script>
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

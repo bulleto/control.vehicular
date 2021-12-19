@@ -11,7 +11,8 @@
 
     <?php
     include ('../partials/conexion.php');
-    @session_start();
+    include ('../partials/sesion.php');
+
     $id_usuario= $_SESSION['id_usuario'];
     $sql="SELECT marca,modelo,placa FROM vehiculos WHERE id_usuario = '$id_usuario'";
     $result=mysqli_query($conn, $sql);

@@ -14,8 +14,8 @@ function enviar(e){
         cilindros = document.querySelector("#cilindros").value,
         niv = document.querySelector("#niv").value,
         motor = document.querySelector("#motor").value,
-        poliza = document.querySelector("#poliza").value;
-        propietario = document.querySelector("#propietario").value;
+        poliza = document.querySelector("#poliza").value,
+        propietario = document.querySelector("#propietario").value,
         seguro = document.querySelector("#seguro").value;
 
         

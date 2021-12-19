@@ -102,10 +102,22 @@ if(!(isset($_SESSION['usuario']))){
   <a href="AltaVehiculo.php">
     <button style="width: 30%;" class="custom-card-2" type="button">Alta</button>
   </a>
-  <a href="BajaVehiculo.php">
-    <button style="width: 30%;" class="custom-card-2" type="button">Baja</button>
-  </a>
-  
+
+
+          <?php
+          if(isset($_SESSION['niv'])){
+          ?>
+              <a href="BajaVehiculo.php">
+                  <button style="width: 30%;" class="custom-card-2" type="button">Baja</button>
+              </a>
+
+
+              <?php
+               }
+          ?>
+
+
+
 </div>
      
      

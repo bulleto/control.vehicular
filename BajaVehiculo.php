@@ -1,3 +1,16 @@
+<?php
+include_once 'partials/sesion.php';
+include_once 'partials/utilities.php';
+$redirect = false;
+if(!(isset($_SESSION['niv']))){
+    $redirect = true;
+    $opcion = 'vehiculos';
+
+}
+if($redirect==true){
+    redirectTo($opcion);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,21 +71,39 @@
       </div>
     </div>
    <!-- Solicitud de informacion  -->
-   <div class="row align-items-center container" style="margin-left: 0.05rem;">
+   <form id="register" class="row align-items-center container" style="margin-left: 0.05rem;">
     <div class="custom-card-2" style="width: 90%; margin-left: 1rem;">
        <!--Formulario NIV-->
     <div class="">
-      <label for="engomado"  style="margin-right: 0.7%;">NIV</label>
-      <input type="text" value="121352231" style="width: 70%; margin-left: 12%;" class="custom-input-2">
+      <label for="niv"  style="margin-right: 0.7%;">NIV</label>
+      <input type="text" value="<?php
+      if(isset($_SESSION['niv'])){
+          echo $_SESSION['niv'];
+      }else{
+          echo "";
+
+      }
+      ?>" style="width: 70%; margin-left: 12%;" class="custom-input-2" id="niv">
     </div>
   <!--Formulario No. de motor-->
     <div class="">
       <label for="motor"  style="margin-right: 0%;">Placas</label>
-      <input type="text" value="1213sdgs522df31" style="width: 70%; margin-top: 10px;" class="custom-input-2">
+      <input type="text" value="<?php
+      if(isset($_SESSION['placa'])){
+          echo $_SESSION['placa'];
+      }else{
+          echo "";
+
+      }
+      ?>" style="width: 70%; margin-top: 10px;" class="custom-input-2" id="placas">
     </div>
    
     </div>
-  </div>
+       <button style="position: absolute; top: 500px; right: 26%; width: 50%" type="submit" class="custom-card-2">Confirmar Baja de Vehiculo</button>
+       <a href="vehiculos.php">
+           <button style="position: absolute; top: 550px; right: 41%;" type="button" class="custom-card-2">Cancelar</button>
+       </a>
+  </form>
   
     <!-- START THE CAROUSEL CONTENT  -->
     
@@ -80,12 +111,8 @@
  
 
 <!--Botones finales-->
-     <button style="position: absolute; top: 500px; right: 26%;" type="submit" class="custom-card-2">Confirmar Baja de Vehiculo</button>
-     <a href="vehiculos.php">
-     <button style="position: absolute; top: 550px; right: 41%;" type="button" class="custom-card-2">Cancelar</button>
-     </a>
-    </form>
-    </div>
+
+
 
 
 
@@ -101,8 +128,13 @@
 
    
     <script src="assets/vendors/js/glightbox.min.js"></script>
-
-
      <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="js/baja.js"></script>
 </body>
 </html>
